@@ -47,11 +47,11 @@ function Login() {
           // ...
         })
         .catch((error) => {
+          console.log("is there any error", error);
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
         });
-      navigate("/browse-page");
     }
   };
   const toggleSignIn = () => {

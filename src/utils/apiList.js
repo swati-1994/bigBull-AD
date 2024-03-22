@@ -8,3 +8,10 @@ export const groupedDailyApi =
   currentDate +
   "?adjusted=true&apiKey=" +
   API_KEY;
+
+export const getParticularStockData =
+  polyGonConst +
+  "v2/aggs/ticker/AAPL/range/1/day/2023-01-09/" +
+  currentDate +
+  "?adjusted=true&sort=asc&limit=120&apiKey=" +
+  API_KEY;

@@ -4,9 +4,8 @@ import Login from "./Login";
 import BrowseStocks from "./BrowseStocks";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import { auth } from "../utils/firebase";
-
-import { addUser, removeUser } from "../utils/userSlice";
+import StockDetail from "./StockDetail";
+import TradingForm from "./TradingForm";
 
 function Body() {
   const appRouter = createBrowserRouter([
@@ -17,6 +16,14 @@ function Body() {
     {
       path: "/browse-page",
       element: <BrowseStocks />,
+    },
+    {
+      path: "/stock-detail",
+      element: <StockDetail />,
+    },
+    {
+      path: "/form",
+      element: <TradingForm />,
     },
   ]);
 
