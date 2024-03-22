@@ -1,5 +1,4 @@
 import React from "react";
-import useGetStockData from "../hooks/useGetStockData";
 import { useSelector } from "react-redux";
 import Chart from "react-apexcharts";
 
@@ -7,7 +6,6 @@ const MakeStocksChart = () => {
   //   useGetStockData();
   const stockDetailsData = useSelector((store) => store.oneStock);
   const givenData = stockDetailsData["oneStocks"];
-  console.log("givenData", givenData);
   const givenSeries = [
     {
       data: givenData?.map((item) => {
@@ -18,8 +16,6 @@ const MakeStocksChart = () => {
       }),
     },
   ];
-
-  console.log("onestockkkkk", givenSeries);
 
   const options = {
     chart: {

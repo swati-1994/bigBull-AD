@@ -9,7 +9,6 @@ const useGetAllStocks = () => {
   const getAllData = async () => {
     const data = await fetch(apiGetdata);
     const json = await data.json();
-    console.log("json", json?.results?.slice(0, 20));
     dispatch(getAllStocks(json?.results?.slice(0, 20)));
   };
 

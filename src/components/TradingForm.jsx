@@ -9,7 +9,6 @@ const TradingForm = () => {
   };
   return (
     <div>
-      <Header />
       <div className="m-10 max-w-md mx-auto">
         <div className="bg-white shadow-md rounded-md p-6">
           <h2 className="text-xl font-semibold mb-4">Buy Stocks</h2>

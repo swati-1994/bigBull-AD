@@ -2,15 +2,16 @@ import React from "react";
 import MakeStocksChart from "./MakeStocksChart";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import useGetStockData from "../hooks/useGetStockData";
 
 const StockDetail = () => {
+  useGetStockData();
   const navigate = useNavigate();
   function buyStocks() {
     navigate("/form");
   }
   return (
     <div>
-      <Header />
       <MakeStocksChart />;
       <div className="mt-30 flex justify-center">
         <div>
