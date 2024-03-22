@@ -6,14 +6,12 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
 
   const handleButtonClick = () => {
     const message = checkValiddate(email.current.value, password.current.value);
@@ -36,7 +34,6 @@ function Login() {
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
         });
-      navigate("/");
     } else {
       //sign-in logic
       signInWithEmailAndPassword(
