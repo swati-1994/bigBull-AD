@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getParticularStock } from "../utils/getOneStockSlice";
 
 const useGetStockData = () => {
   const dispatch = useDispatch();
+  const movieData = useSelector((store) => store?.individualStock?.oneStocks);
   const getDataApi =
     "https://api.polygon.io/v2/aggs/ticker/AAPL/range/1/day/2023-03-05/2024-03-15?adjusted=true&sort=asc&limit=120&apiKey=xfpR2Q0CgP9qUcg41GienUnvPxzRoLYE";
   const getData = async () => {
@@ -14,7 +15,7 @@ const useGetStockData = () => {
   };
 
   useEffect(() => {
-    getData();
+    !movieData && getData();
   }, []);
 };
 
