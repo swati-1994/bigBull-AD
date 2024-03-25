@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getParticularStock } from "../utils/getOneStockSlice";
 
+//this hook gives data for one stock
 const useGetStockData = () => {
   const dispatch = useDispatch();
   const movieData = useSelector((store) => store?.individualStock?.oneStocks);
@@ -10,7 +11,6 @@ const useGetStockData = () => {
   const getData = async () => {
     const data = await fetch(getDataApi);
     const json = await data.json();
-    console.log("json from one stock", json.results);
     dispatch(getParticularStock(json?.results));
   };
 

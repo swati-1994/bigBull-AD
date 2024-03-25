@@ -8,6 +8,7 @@ import StockDetail from "./StockDetail";
 import TradingForm from "./TradingForm";
 
 function Body() {
+  //setting router path for different pages
   const appRouter = createBrowserRouter([
     {
       path: "/",

@@ -17,8 +17,8 @@ const BrowseStocks = () => {
 
   return (
     <div>
+      {/* listing all the apis from different categories */}
       <Header />
-
       <StocksListComponent category={categories} stocks={allStocks} />
     </div>
   );

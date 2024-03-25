@@ -6,6 +6,7 @@ import { getAllStocks } from "../utils/getAllstocksSlice";
 const useGetAllStocks = () => {
   const dispatch = useDispatch();
   const apiGetdata = groupedDailyApi;
+  console.log("apiGetdata", apiGetdata);
   const allStocksData = useSelector((store) => store.stocks.allStocks);
   console.log("logStockssss", allStocksData);
   const getAllData = async () => {
@@ -15,7 +16,7 @@ const useGetAllStocks = () => {
   };
 
   useEffect(() => {
-    !allStocksData && getAllData();
+    getAllData();
   }, []);
 };
 

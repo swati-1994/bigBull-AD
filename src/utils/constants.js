@@ -3,7 +3,7 @@ export const API_KEY = "xfpR2Q0CgP9qUcg41GienUnvPxzRoLYE";
 
 const date = new Date();
 
-let day = date.getDate().toString() - 2;
+let day = date.getDate().toString() - 3;
 let month = (date.getMonth() + 1).toString();
 let year = date.getFullYear();
 
