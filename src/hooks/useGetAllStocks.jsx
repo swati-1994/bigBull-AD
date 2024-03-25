@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { groupedDailyApi } from "../utils/apiList";
 import { getAllStocks } from "../utils/getAllstocksSlice";
 
+//this is a hook is used to get all the stocks
 const useGetAllStocks = () => {
   const dispatch = useDispatch();
   const apiGetdata = groupedDailyApi;
-  console.log("apiGetdata", apiGetdata);
   const allStocksData = useSelector((store) => store.stocks.allStocks);
-  console.log("logStockssss", allStocksData);
   const getAllData = async () => {
     const data = await fetch(apiGetdata);
     const json = await data.json();
@@ -16,7 +15,7 @@ const useGetAllStocks = () => {
   };
 
   useEffect(() => {
-    getAllData();
+    !allStocksData && getAllData();
   }, []);
 };
 
